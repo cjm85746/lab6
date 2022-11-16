@@ -6,11 +6,9 @@ from logic import TicTacToe
 from random import randint
 
 """
-Args: 
-
 
 Return:
-until there is a winner or draw, the code keep shows and updates the tic-tac-toe so that two different players can play the game
+until there is a winner or draw, the code keep shows and updates the tic-tac-toe so that two different players or one player with a bot can play the game
 
 """
 
