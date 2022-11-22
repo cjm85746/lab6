@@ -40,8 +40,9 @@ if __name__ == '__main__':
             a = int(input ())
             print("input a column number (1-3)")
             b=int (input())
-
+        #if a user put the number outisde of range, the game ask the user to input again
             (a,b) = ttt.constraint(a,b)
+        #if a user choose a slot that is already occupied, the game ask the user to input again
             while ttt.board[a-1][b-1]!= None:
                 print ("Choose an empty slot")
                 print ("input a row number (1-3)")
@@ -54,7 +55,6 @@ if __name__ == '__main__':
         else:
             (a,b) = ttt.bot()
         # if an user choose the slot that the other user already occupied, the game require the user to pick another slot.
-
         #input the value in the board
         ttt.board [a-1][b-1] = ttt.player
         ttt.count +=1

@@ -53,6 +53,7 @@ class TicTacToe:
             return 'O'
 
     def constraint (self,a,b):
+        """Given the inputs from a user, it ask a user to input again until it get the number between 1-3, and return the a,b"""
         while b<1 or b>3 or a<1 or a>3:
             print ("Choose a number between 1-3")
             print("input a row number (1-3)")
@@ -62,12 +63,12 @@ class TicTacToe:
         return a,b
     
     def bot (self):
+        """Return the randomly chosen a,b within the 1~3 range"""
         a= int(randint (1,3))
         b = int(randint (1,3))
         while self.board[a-1][b-1]!= None:
             a= int(input())
             b=int(input())
         return a,b
-
 
 
