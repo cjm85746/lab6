@@ -41,35 +41,18 @@ if __name__ == '__main__':
             print("input a column number (1-3)")
             b=int (input())
 
-            while b<1 or b>3 or a<1 or a>3:
-                print ("Choose a number between 1-3")
-                print("input a row number (1-3)")
-                a= int (input ())
-                print("input a column number (1-3)")
-                b = int (input ())
-
-
+            (a,b) = ttt.constraint(a,b)
             while ttt.board[a-1][b-1]!= None:
                 print ("Choose an empty slot")
                 print ("input a row number (1-3)")
                 a= int (input())              
                 print ("input a column number (1-3)")
                 b=int (input ())
+                (a,b) = ttt.constraint(a,b)
 
-                while b<0 or b>=4 or a<0 or a>=4:
-                    print ("Choose a number between 1-3")
-                    print("input a row number (1-3)")
-                    a= int (input ())
-                    print("input a column number (1-3)")
-                    b = int (input ())
-        #bot - automatically choose
+        #bot - automatically choose a slot
         else:
-            a= int(randint (1,3))
-            b = int(randint (1,3))
-            while ttt.board[a-1][b-1]!= None:
-                a= int(input())
-                b=int(input())
-            ttt.player_type=ttt.single_player()
+            (a,b) = ttt.bot()
         # if an user choose the slot that the other user already occupied, the game require the user to pick another slot.
 
         #input the value in the board

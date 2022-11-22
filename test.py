@@ -2,7 +2,7 @@
 
 import unittest
 import logic
-
+from random import randint
 
 class TestLogic(unittest.TestCase):
 
@@ -24,6 +24,11 @@ class TestLogic(unittest.TestCase):
     def test_other_player(self):
         player = 'O'
         self.assertEqual(self.ttt.other_player(player), 'X')
+
+    def test_constraint(self):
+        a=1
+        b=1
+        self.assertEqual(self.ttt.constraint(a,b), (a,b))
     
 
 if __name__ == '__main__':

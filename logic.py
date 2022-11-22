@@ -2,6 +2,9 @@
 # or output happens here. The logic in this file
 # should be unit-testable.
 
+from random import randint
+
+
 class TicTacToe:
 
     def __init__(self):
@@ -48,3 +51,23 @@ class TicTacToe:
             return 'X'
         else:
             return 'O'
+
+    def constraint (self,a,b):
+        while b<1 or b>3 or a<1 or a>3:
+            print ("Choose a number between 1-3")
+            print("input a row number (1-3)")
+            a= int (input ())
+            print("input a column number (1-3)")
+            b = int (input ())
+        return a,b
+    
+    def bot (self):
+        a= int(randint (1,3))
+        b = int(randint (1,3))
+        while self.board[a-1][b-1]!= None:
+            a= int(input())
+            b=int(input())
+        return a,b
+
+
+
